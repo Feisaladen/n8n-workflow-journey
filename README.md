@@ -47,7 +47,9 @@ Each week gets its own folder so that:
 |-- README.md
 |-- week-02/
 |   |-- README.md
-|   `-- crypto price logger.json
+|   |-- crypto price logger.json
+|   |-- Email summarizer.json
+|   `-- Email summarizer README.md
 |-- week-03/
 |   |-- README.md
 |   `-- workflow-file.json
@@ -93,6 +95,7 @@ Each weekly README should answer these questions:
 ## Weekly Projects
 
 - [Week 02 - Crypto Price Logger](./week-02/README.md)
+- [Week 02 - Email Summarizer](./week-02/Email%20summarizer%20README.md)
 
 More weeks will be added as the journey continues.
 

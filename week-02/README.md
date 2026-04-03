@@ -2,6 +2,15 @@
 
 This project contains an n8n workflow that fetches the current Bitcoin price in USD and logs it to Google Sheets on a schedule.
 
+## Other Workflow In This Folder
+
+This week folder also includes another workflow:
+
+- `Email summarizer.json`
+- `Email summarizer README.md`
+
+That workflow monitors Gmail, summarizes incoming emails with Google Gemini, and sends the summary by email.
+
 ## What This Workflow Does
 
 The workflow runs automatically every day at 9:00, requests the latest Bitcoin price from the CoinGecko API, formats the data, and appends a new row to a Google Sheet.
@@ -95,7 +104,9 @@ You can extend this workflow to:
 |-- README.md
 `-- week-02/
     |-- README.md
-    `-- crypto price logger.json
+    |-- crypto price logger.json
+    |-- Email summarizer.json
+    `-- Email summarizer README.md
 ```
 
 ## License
