@@ -1,0 +1,139 @@
+{
+  "name": "form-submission",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "software Development cohort interest form ",
+        "formDescription": "register your interest for the next software development cohort",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": " Full Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "phone number",
+              "fieldType": "number",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "email address",
+              "fieldType": "email"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e32c3b88-dec4-4a22-9956-01b1d01368e9",
+      "name": "On form submission",
+      "webhookId": "8e5e4bcf-586a-48c2-a456-32bc5005638c"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1E8-ZDJAmkTZGtRTZsSZU-tHgLnhQcJnm0U62TZq42To",
+          "mode": "list",
+          "cachedResultName": "software dev cohort interest",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1E8-ZDJAmkTZGtRTZsSZU-tHgLnhQcJnm0U62TZq42To/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1E8-ZDJAmkTZGtRTZsSZU-tHgLnhQcJnm0U62TZq42To/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Full name": "={{ $json[' Full Name'] }}",
+            "phone number": "={{ $json['phone number'] }}",
+            "Email address": "={{ $json['email address'] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Full name",
+              "displayName": "Full name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "phone number",
+              "displayName": "phone number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email address",
+              "displayName": "Email address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "7e1d49a6-f46c-462d-b17e-09fa5dc5c432",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "h10xRvvS0oX3Qerp",
+          "name": "Google Sheets account 4"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "cf67458f-5b32-4cc0-9af3-b4b5eeff0f3b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "1a90b391207537e63c140fd5bb0eea9f52c674801bdc7bb2816f64e1699d2ebf"
+  },
+  "id": "U7pW0SzJLJJgPL37",
+  "tags": []
+}
