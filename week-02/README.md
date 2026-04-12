@@ -2,14 +2,47 @@
 
 This project contains an n8n workflow that fetches the current Bitcoin price in USD and logs it to Google Sheets on a schedule.
 
-## Other Workflow In This Folder
+## Other Workflows In This Folder
 
 This week folder also includes another workflow:
 
-- `Email summarizer.json`
-- `Email summarizer README.md`
+- `form submission with an email summarizer .json`
 
-That workflow monitors Gmail, summarizes incoming emails with Google Gemini, and sends the summary by email.
+### Form Submission with Email Summarizer
+
+This n8n workflow automates the collection of student interest forms for a Software Development Cohort and provides daily email summaries to administrators.
+
+#### Workflow Components
+
+1. **Form Submission Collection**
+   - Trigger: Form submission via n8n's built-in form trigger
+   - Form Fields: Full Name (required), Phone Number (number, required), Email Address (email)
+   - Action: Automatically appends new submissions to a Google Sheets spreadsheet
+
+2. **Daily Email Summary**
+   - Trigger: Scheduled to run daily at 8:00 AM
+   - Process:
+     1. Retrieves all current submissions from the Google Sheet
+     2. Sends the data to OpenRouter AI for summarization
+     3. Generates a professional morning briefing report
+     4. Emails the summary to the admin team
+
+#### Key Features
+- Automated data collection from form submissions
+- Centralized storage in Google Sheets
+- AI-powered summarization using OpenRouter
+- Scheduled daily morning briefings
+- Professional communication tone
+
+#### Required Credentials
+- Google Sheets OAuth2 API
+- Gmail OAuth2
+- OpenRouter API Key
+
+#### Usage
+1. Activate the workflow in n8n
+2. Share the form URL with potential students
+3. Daily at 8 AM, admins receive email summaries
 
 ## What This Workflow Does
 
